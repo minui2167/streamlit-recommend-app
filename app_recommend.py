@@ -7,6 +7,7 @@ def run_recommend():
 
     if st.button('추천 실행'):
         try:  
+            print(0)
             corr = pd.read_csv('data/corr.csv')
             meta_Prime_Pantry = pd.read_csv('data/meta_Prime_Pantry.csv')
             item_input = meta_Prime_Pantry.loc[meta_Prime_Pantry['title'].str.lower().str.contains(sentence)].sort_values(by = 'ratings', ascending = False).iloc[0]['asin']            
