@@ -3,7 +3,6 @@ import pandas as pd
 import random
 from app_home import run_home
 from app_eda import run_eda
-from app_search import run_search
 from app_predict import run_predict
 from app_recommend import run_recommend
 
@@ -25,11 +24,11 @@ def message_cleaning(sentence):
 
 def main():
     st.set_page_config('아마존 리뷰 분석 및 추천 시스템')
-    menu = ['Home', '분석', '검색', '감정예측', '추천'] 
+    menu = ['Home', '분석', '감정예측', '추천'] 
     st.sidebar.header('아마존 리뷰 분석 및 추천 시스템')
     choice = st.sidebar.selectbox('메뉴 선택', menu)
     st.sidebar.subheader('상품예시')
-    meta_Prime_Pantry = pd.read_csv('data/meta_Prime_Pantry.csv')
+    meta_Prime_Pantry = pd.read_csv('data/meta_Prime_Pantry.csv', index_col = 0)
 
     example_rand = random.randint(0, len(meta_Prime_Pantry) - 1)
     example_temp = meta_Prime_Pantry.loc[example_rand, 'imageURLHighRes'].split(',')
@@ -46,18 +45,18 @@ def main():
         </div>
     <a/>
     ''',unsafe_allow_html=True)
-    st.sidebar.subheader(meta_Prime_Pantry.loc[random.randint(0, len(meta_Prime_Pantry) - 1), 'title'])
-    st.sidebar.text('price: ' + meta_Prime_Pantry.loc[random.randint(0, len(meta_Prime_Pantry) - 1), 'price'])
+    st.sidebar.subheader(meta_Prime_Pantry.loc[example_rand, 'title'])
+    st.sidebar.text(meta_Prime_Pantry.loc[example_rand, 'price'] 
+    + ' | *'
+    + str(round(meta_Prime_Pantry.loc[example_rand, 'ratings'], 2)))
     
     if choice == menu[0]:
         run_home()
     elif choice == menu[1]:
         run_eda()
     elif choice == menu[2]:
-        run_search()
-    elif choice == menu[3]:
         run_predict()
-    elif choice == menu[4]:
+    elif choice == menu[3]:
         run_recommend()
 
 if __name__ == '__main__':
