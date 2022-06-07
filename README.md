@@ -8,4 +8,4 @@
 
 [http://ec2-3-35-26-163.ap-northeast-2.compute.amazonaws.com:8504/](http://ec2-3-35-26-163.ap-northeast-2.compute.amazonaws.com:8504/)
 
-![(https://media-cldnry.s-nbcnews.com/image/upload/newscms/2020_38/3412555/amazon-prime-day-history-kr-2x1-tease-200916.jpg)
+![dd](https://media-cldnry.s-nbcnews.com/image/upload/newscms/2020_38/3412555/amazon-prime-day-history-kr-2x1-tease-200916.jpg)
