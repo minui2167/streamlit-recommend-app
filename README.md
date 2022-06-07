@@ -24,4 +24,4 @@
 # 추천 시스템
 
 * pivot 테이블로 filltering
-* item-based collavorative filltering을 통해서 상품 추천
+* item-based collaorative filltering을 통해서 상품 추천
