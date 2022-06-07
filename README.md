@@ -1,2 +1,2 @@
 # streamlit-recommend-app
-<img src="https://img.shields.io/badge/Python-3178C6?style=flat&logo=Python&logoColor=white"/>
+아마존 리뷰 분석과 감정 예측, 상품 추천하는 앱입니다.
