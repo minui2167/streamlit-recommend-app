@@ -11,12 +11,13 @@ def run_recommend():
             meta_Prime_Pantry = pd.read_csv('data/meta_Prime_Pantry.csv')
             item_input = meta_Prime_Pantry.loc[meta_Prime_Pantry['title'].str.lower().str.contains(sentence)].sort_values(by = 'ratings', ascending = False).iloc[0]['asin']            
             recommend_asin = corr['asin'][corr[item_input].sort_values(ascending = False).index[:5]]
-
+            print(111)
             col1, col2, col3, col4, col5 = st.columns(5)
             cols = [col1, col2, col3, col4, col5]
 
             for i in range(5):
                 with cols[i]:
+                    print(i)
                     asin = recommend_asin.iloc[i]
                     temp = meta_Prime_Pantry.loc[meta_Prime_Pantry['asin'] == asin].iloc[0]
                     temp_image = temp['imageURLHighRes'].split(',')
