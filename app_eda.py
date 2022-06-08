@@ -37,6 +37,7 @@ def run_eda():
     st.dataframe(meta_Prime_Pantry.loc[meta_Prime_Pantry['title'].str.lower().str.contains(goods_text)])
 
     # 높은순 5개 출력
+    st.title('')
     st.subheader('별점이 높은순 상품 5개 (100명이상 리뷰)')
     col1, col2, col3, col4, col5 = st.columns(5)
     cols = [col1, col2, col3, col4, col5]
@@ -69,6 +70,7 @@ def run_eda():
             st.text(temp['price'] + ' | *' + str(round(temp['ratings'],2)))
     
     # 낮은순 5개 출력
+    st.title('')
     st.subheader('별점이 낮은순 상품 5개 (100명이상 리뷰)')
     col1, col2, col3, col4, col5 = st.columns(5)
     cols = [col1, col2, col3, col4, col5]
