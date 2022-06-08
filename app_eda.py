@@ -17,6 +17,11 @@ def run_eda():
     fig = px.histogram(Prime_Pantry_Review, x = 'verified')
     st.plotly_chart(fig)
 
+    # 가격 분포
+    st.subheader('가격대')
+    fig = px.histogram(meta_Prime_Pantry, x = meta_Prime_Pantry['price'].str[1:].astype(float))
+    st.plotly_chart(fig)
+
     # 별점 평균과 리뷰 개수를 구해서 100개 이상의 리뷰가 달린 제품중 별점 높은순 5개 낮은순 5개 구하기
     ratings = Prime_Pantry_Review.groupby('asin').mean('overall')['overall']
     counts = Prime_Pantry_Review.groupby('asin').count()['overall']
