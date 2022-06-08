@@ -1,4 +1,5 @@
 import streamlit as st
+from streamlit_option_menu import option_menu
 import pandas as pd
 import random
 from app_home import run_home
@@ -24,9 +25,11 @@ def message_cleaning(sentence):
 
 def main():
     st.set_page_config('아마존 리뷰 분석 및 추천 시스템')
-    menu = ['Home', '분석', '감정예측', '추천'] 
-    st.sidebar.header('아마존 리뷰 분석 및 추천 시스템')
-    choice = st.sidebar.selectbox('메뉴 선택', menu)
+    menu = ['Home', '분석', '감정예측', '상품추천'] 
+    with st.sidebar:
+        choice = option_menu("Main Menu", ["Home", "분석", "감정예측", "상품추천"],
+                            icons=['house', 'bi bi-graph-up-arrow', 'kanban', 'book'],
+                            menu_icon="app-indicator", default_index=0)
     st.sidebar.subheader('상품예시')
     meta_Prime_Pantry = pd.read_csv('data/meta_Prime_Pantry.csv', index_col = 0)
 
