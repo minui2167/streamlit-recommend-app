@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 
 def run_home():
+    # 제목과 이미지
     st.title('아마존 리뷰 분석 및 추천 시스템')
     st.title('')
     st.info('아마존 리뷰 분석, 상품 검색, 리뷰 감정 예측, 추천 시스템을 수행합니다.')

@@ -7,12 +7,14 @@ from app_eda import run_eda
 from app_predict import run_predict
 from app_recommend import run_recommend
 
+# 불용어 다운
 import string
 import nltk
 nltk.download('stopwords')
 from nltk.corpus import stopwords
 my_stopwords = stopwords.words('english')
 
+# predict를 위한 함수 
 def message_cleaning(sentence):
     # 1. 구두점 제거
     Test_punc_removed = [char for char in sentence if char not in string.punctuation]
@@ -24,15 +26,19 @@ def message_cleaning(sentence):
     return Test_punc_removed_join_clean
 
 def main():
+    # 제목
     st.set_page_config('아마존 리뷰 분석 및 추천 시스템')
+
+    # 메뉴바
     menu = ['Home', '분석', '감정예측', '상품추천'] 
     with st.sidebar:
         choice = option_menu("Main Menu", ["Home", "분석", "감정예측", "상품추천"],
                             icons=['house', 'bi bi-graph-up-arrow', 'kanban', 'book'],
                             menu_icon="app-indicator", default_index=0)
+
+    # 예시 상품 랜덤으로 불러오기
     st.sidebar.subheader('상품예시')
     meta_Prime_Pantry = pd.read_csv('data/meta_Prime_Pantry.csv', index_col = 0)
-
     example_rand = random.randint(0, len(meta_Prime_Pantry) - 1)
     example_temp = meta_Prime_Pantry.loc[example_rand, 'imageURLHighRes'].split(',')
     if len(example_temp) == 1:
@@ -53,6 +59,7 @@ def main():
     + ' | *'
     + str(round(meta_Prime_Pantry.loc[example_rand, 'ratings'], 2)))
     
+    # 파일 분리 실행
     if choice == menu[0]:
         run_home()
     elif choice == menu[1]:
