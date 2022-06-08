@@ -5,7 +5,8 @@
 ![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white)
 ![streamlit](https://streamlit.io/images/brand/streamlit-logo-secondary-colormark-darktext.png)
 
-아마존 리뷰의 별점과 상품정보 분석하고, 별점을 기반으로 리뷰 텍스트의 감정을 예측하고
+아마존 리뷰의 별점과 상품정보 분석하고
+별점을 기반으로 리뷰 텍스트의 감정을 예측하고
 상품을 입력하면 비슷한 상품을 출력해주는 앱입니다.
 
 [http://ec2-3-35-26-163.ap-northeast-2.compute.amazonaws.com:8504/](http://ec2-3-35-26-163.ap-northeast-2.compute.amazonaws.com:8504/)
