@@ -4,7 +4,7 @@ import pandas as pd
 def run_recommend():
 
     # 제목, 데이터 불러오기
-    st.subheader('사용자 기반 상품 추천')
+    st.subheader('전체 사용자 기반 상품 추천')
     sentence = st.text_input('단어를 입력하면 단어가 포함된 상품을 기반으로 추천합니다.').lower()
     corr = pd.read_csv('data/corr_recommend.csv', index_col = 0)
 
