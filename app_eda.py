@@ -17,6 +17,11 @@ def run_eda():
     fig = px.histogram(Prime_Pantry_Review, x = 'verified')
     st.plotly_chart(fig)
 
+    # 가격 분포
+    st.subheader('가격대')
+    fig = px.histogram(meta_Prime_Pantry, x = meta_Prime_Pantry['price'].str[1:].astype(float), nbins = 100, labels = {'x':'price'})
+    st.plotly_chart(fig)
+
     # 별점 평균과 리뷰 개수를 구해서 100개 이상의 리뷰가 달린 제품중 별점 높은순 5개 낮은순 5개 구하기
     ratings = Prime_Pantry_Review.groupby('asin').mean('overall')['overall']
     counts = Prime_Pantry_Review.groupby('asin').count()['overall']
@@ -32,6 +37,7 @@ def run_eda():
     st.dataframe(meta_Prime_Pantry.loc[meta_Prime_Pantry['title'].str.lower().str.contains(goods_text)])
 
     # 높은순 5개 출력
+    st.title('')
     st.subheader('별점이 높은순 상품 5개 (100명이상 리뷰)')
     col1, col2, col3, col4, col5 = st.columns(5)
     cols = [col1, col2, col3, col4, col5]
@@ -64,6 +70,7 @@ def run_eda():
             st.text(temp['price'] + ' | *' + str(round(temp['ratings'],2)))
     
     # 낮은순 5개 출력
+    st.title('')
     st.subheader('별점이 낮은순 상품 5개 (100명이상 리뷰)')
     col1, col2, col3, col4, col5 = st.columns(5)
     cols = [col1, col2, col3, col4, col5]
