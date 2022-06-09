@@ -37,6 +37,7 @@
 
 * 구두점, 불용어 처리
 * CountVectorizer로 텍스트 전처리
+* RandomUnderSampler로 클래스 불균형 맞추고
 * MultinomialNB로 리뷰의 긍정 부정 예측
 
 # 추천 시스템
