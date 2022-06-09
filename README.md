@@ -44,4 +44,5 @@
 
 * pivot 테이블로 filltering
 * item-based collaorative filltering을 통해서 상품끼리 상관관계 구함
+* 각 상품에 대해 상관관계가 높은 5개 상품만 저장
 * 상품을 입력하면 추천 상품 출력
