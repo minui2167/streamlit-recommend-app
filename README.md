@@ -30,6 +30,7 @@
 # 분석
 
 * plotly를 통해서 별점, 인증 여부, 가격대 분포 시각화
+* histogram 시각화
 * groupby를 통해서 가장 높은 별점과 낮은 별점 분석 
 * str.contains로 단어를 포함하는 상품 검색 기능
 
@@ -39,6 +40,8 @@
 * CountVectorizer로 텍스트 전처리
 * RandomUnderSampler로 클래스 불균형 맞추고
 * MultinomialNB로 리뷰의 긍정 부정 예측
+
+![다운로드 (4)](https://user-images.githubusercontent.com/105832345/173176227-acdb4f6e-e218-4259-860c-42fdb0932d89.png)
 
 # 추천 시스템
 
