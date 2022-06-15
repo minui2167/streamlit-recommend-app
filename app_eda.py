@@ -4,18 +4,15 @@ import plotly.express as px
 
 def run_eda():
     # 데이터 불러오기
-    Prime_Pantry_Review = pd.read_csv('data/Prime_Pantry_Review.csv', index_col = 0)
     meta_Prime_Pantry = pd.read_csv('data/meta_Prime_Pantry.csv', index_col = 0)
 
     # 별점 분포 그래프
     st.subheader('별점 분포')
-    fig = px.histogram(Prime_Pantry_Review, x = 'overall')
-    st.plotly_chart(fig)
+    st.image('data/overall.png')
 
     # 인증된 사용자 그래프
     st.subheader('인증된 사용자')
-    fig = px.histogram(Prime_Pantry_Review, x = 'verified')
-    st.plotly_chart(fig)
+    st.image('data/verified.png')
 
     # 가격 분포
     st.subheader('가격대')
@@ -23,14 +20,9 @@ def run_eda():
     st.plotly_chart(fig)
 
     # 별점 평균과 리뷰 개수를 구해서 100개 이상의 리뷰가 달린 제품중 별점 높은순 5개 낮은순 5개 구하기
-    ratings = Prime_Pantry_Review.groupby('asin').mean('overall')['overall']
-    counts = Prime_Pantry_Review.groupby('asin').count()['overall']
-    ratings_counts = pd.concat([ratings, counts], axis = 1)
-    ratings_counts.columns = ['ratings', 'overall']
-    ratings_counts_sort = ratings_counts.loc[ratings_counts['overall']> 100].sort_values(by = 'ratings', ascending = False)
-    top5_asin = list(ratings_counts_sort.index[:5])
-    bottom5_asin = list(ratings_counts_sort.index[-5:])
-
+    top5_asin = ['B00TDEDS7Q', 'B000VKA1SA', 'B012XBZLNY', 'B00P6EQW6G', 'B00OZENQK8']
+    bottom5_asin = ['B00UB6ZL0W', 'B00VWH5SSO', 'B00QJGVTGS', 'B00QJGW1OC', 'B016F7GMV2']
+    
     # 문자열을 포함하는 상품 검색
     st.subheader('상품검색')
     goods_text = st.text_input('입력', 'hershey').lower()
