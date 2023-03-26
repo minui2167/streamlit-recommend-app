@@ -11,8 +11,6 @@
 
 상품을 입력하면 추천 상품을 출력해주는 앱입니다.
 
-[http://ec2-3-34-50-142.ap-northeast-2.compute.amazonaws.com:8503/](http://ec2-3-34-50-142.ap-northeast-2.compute.amazonaws.com:8503/)
-
 데이터 출처 [https://nijianmo.github.io/amazon/index.html](https://nijianmo.github.io/amazon/index.html)
 
 ![dd](https://media-cldnry.s-nbcnews.com/image/upload/newscms/2020_38/3412555/amazon-prime-day-history-kr-2x1-tease-200916.jpg)
